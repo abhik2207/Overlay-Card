@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(to bottom right, #000000, #2e2e2e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    height: 500px;
+    width: 800px;
+    background-image: url("groot.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: 0.6s;
+}
+
+.card .overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: cyan;
+    padding: 150px;
+    gap: 40px;
+    background-color: rgb(29, 29, 29);
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: 0.6s;
+}
+
+.overlay h1 {
+    font-size: 5vw;
+    animation-name: glow;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.overlay p {
+    font-size: 1.3vw;
+}
+
+.card:hover .overlay {
+    opacity: 1;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 30px rgba(0, 255, 255, 0.603);
+    cursor: grab;
+}
+
+@keyframes glow {
+    50% {
+        text-shadow: 0px 0px 30px rgba(0, 255, 255, 0.603);
+    }
+}
